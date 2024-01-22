@@ -1,9 +1,8 @@
-import Vue from 'vue'
-import Router from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 
-Vue.use(Router)
 
-const router = new Router({
+const router = createRouter({
+  history: createWebHistory(),
     routes: [
         {
             path: '/login',
@@ -27,7 +26,7 @@ const router = new Router({
         },
     ]
 })
-
+/*
 router.beforeEach((to, from, next) => {
     // 路由守卫
     if(!localStorage.getItem('token') && to.name !== 'Login'){
@@ -45,6 +44,6 @@ router.beforeEach((to, from, next) => {
     }
 
     next()
-})
+}) */
 
 export default router

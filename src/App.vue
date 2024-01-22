@@ -47,9 +47,10 @@ export default {
   }),
 
   created() {
-    this.utils.GET('/base').then(res => {
+     this.utils.GET('/base').then(res => {
       this.base = res
-      this.$i18n.locale = res.Language
+      //this.$i18n.locale = res.Language
+      this.$i18n.locale = 'zh-CN'
     }).catch()
   },
   methods: {
@@ -66,11 +67,14 @@ export default {
 
 <style>
 #app {
-  /*font-family: 'Avenir', Helvetica, Arial, sans-serif;*/
-  /*-webkit-font-smoothing: antialiased;*/
-  /*-moz-osx-font-smoothing: grayscale;*/
-  /*text-align: center;*/
-  /*color: #2c3e50;*/
-  /*margin-top: 60px;*/
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+
+
+
 }
 </style>

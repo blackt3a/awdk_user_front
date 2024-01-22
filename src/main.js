@@ -1,26 +1,43 @@
-import Vue from 'vue'
-import VueI18n from 'vue-i18n'
+/**
+ * main.js
+ *
+ * Bootstraps Vuetify and other plugins then mounts the App`
+ */
+
+// Plugins
+import { registerPlugins } from '@/plugins'
+
+// Components
+//
+import { createApp } from 'vue'
+import { createI18n } from 'vue-i18n'
+import vuetify from '@/plugins/vuetify'
 import App from './App.vue'
 import router from './router'
-import vuetify from '@/plugins/vuetify'
+// Composables
 import utils from './utils'
 
-Vue.config.productionTip = false
-Vue.prototype.utils = utils
 
-Vue.use(VueI18n)
+import zhCN from '@/assets/zh-CN.json'
+import enUS from '@/assets/en-US.json'
 
-const i18n = new VueI18n({
+
+
+const i18n = createI18n({
     locale: 'zh-CN',
     messages: {
-        'zh-CN': require('@/assets/languages/zh-CN.json'),
-        'en-US': require('@/assets/languages/en-US.json')
+        'zh-CN': zhCN,
+        'en-US': enUS
     }
 });
 
-new Vue({
-    render: h => h(App),
-    router: router,
-    i18n,
-    vuetify,
-}).$mount('#app')
+
+
+const app = createApp(App)
+
+app.config.productionTip = false
+app.config.globalProperties.utils = utils
+app.use(vuetify)
+app.use(i18n)
+app.use(router)
+app.mount('#app')
