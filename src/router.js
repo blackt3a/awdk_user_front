@@ -26,7 +26,7 @@ const router = createRouter({
         },
     ]
 })
-/*
+
 router.beforeEach((to, from, next) => {
     // 路由守卫
     if(!localStorage.getItem('token') && to.name !== 'Login'){
@@ -44,6 +44,6 @@ router.beforeEach((to, from, next) => {
     }
 
     next()
-}) */
+})
 
 export default router
