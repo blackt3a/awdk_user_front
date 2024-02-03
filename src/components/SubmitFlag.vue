@@ -16,19 +16,22 @@
             </v-btn>
         </v-card-title>
         <v-card-text>
-            <h2>POST <code style="background-color: #1c1c1c">/flag</code></h2><br>
+            <h2>POST <code>/flag</code></h2><br>
+
             <span><b>Header</b></span><br>
             <span>Content-Type: application/json</span><br>
             <span>Authorization: {{info.Token}}</span><br>
             <p><b>Body</b></p>
-            <code class="pa-3" style="width: 100%; background-color: #1c1c1c; color: rgba(255, 255, 255, 0.7);">{"flag":
-                "your_flag_here"}</code>
+
+            <code class="pa-3" style="width: 100%; ">{"flag":"your_flag_here"}</code>
             <br><br>
+
             <v-divider></v-divider>
             <br>
             <p>
-                <code class="pa-3" style="width: 100%; background-color: #1c1c1c; color: rgba(255, 255, 255, 0.7);">{{getCurlCommand()}}</code>
+                <code class="pa-3" style="width: 100%; ">{{getCurlCommand()}}</code>
             </p>
+
         </v-card-text>
     </v-card>
 </template>

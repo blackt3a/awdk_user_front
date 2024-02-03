@@ -66,6 +66,14 @@ export default {
 </script>
 
 <style>
+
+body {
+  background-color: #fcf0f0; /* 设置网页的背景颜色 */
+  color: #333; /* 设置文本颜色 */
+
+}
+
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -73,8 +81,8 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
-
-
-
 }
+
+
+
 </style>
